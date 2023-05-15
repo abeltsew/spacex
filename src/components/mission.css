@@ -1,10 +1,14 @@
 .shaded {
   background-color: rgb(183, 183, 183);
 }
+
 .table-container {
   padding: 2rem;
 }
 
-table * {
+table,
+th,
+td {
   border: solid 1px gray;
+  border-collapse: collapse;
 }

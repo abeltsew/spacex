@@ -31,43 +31,44 @@ const Mission = () => {
     <div className="table-container">
       <table>
         <thead>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th />
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
         </thead>
         <tbody>
-          {missions.map((m, i) => {
-            return (
-              <tr
-                className={`${i % 2 === 0 ? 'shaded' : ''}`}
-                key={m.mission_id}
-              >
-                <td>{m.mission_name}</td>
-                <td>{m.description}</td>
-                {!joinedMissions?.includes(m.mission_id) ? (
-                  <td className="not-member"> Not A Member</td>
-                ) : (
-                  <td className="Active-member">Active Member</td>
-                )}
-                {!joinedMissions?.includes(m.mission_id) ? (
-                  <td>
-                    <button onClick={() => dispatch(joinMission(m.mission_id))}>
-                      Join Mission
-                    </button>
-                  </td>
-                ) : (
-                  <td>
-                    <button
-                      onClick={() => dispatch(leaveMission(m.mission_id))}
-                    >
-                      leave Mission
-                    </button>
-                  </td>
-                )}
-              </tr>
-            );
-          })}
+          {missions.map((m, i) => (
+            <tr className={`${i % 2 === 0 ? 'shaded' : ''}`} key={m.mission_id}>
+              <td>{m.mission_name}</td>
+              <td>{m.description}</td>
+              {!joinedMissions?.includes(m.mission_id) ? (
+                <td className="not-member"> Not A Member</td>
+              ) : (
+                <td className="Active-member">Active Member</td>
+              )}
+              {!joinedMissions?.includes(m.mission_id) ? (
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(joinMission(m.mission_id))}
+                  >
+                    Join Mission
+                  </button>
+                </td>
+              ) : (
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(leaveMission(m.mission_id))}
+                  >
+                    leave Mission
+                  </button>
+                </td>
+              )}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
