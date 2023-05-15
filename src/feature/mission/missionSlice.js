@@ -21,13 +21,11 @@ const missionSlice = createSlice({
     builder.addCase(getMissions.fulfilled, (state, { payload }) => {
       state.isMissionLoading = false;
       const filteredMissions = [];
-      payload.map((info) => {
-        filteredMissions.push({
-          mission_id: info.mission_id,
-          mission_name: info.mission_name,
-          description: info.description,
-        });
-      });
+      payload.map((info) => filteredMissions.push({
+        mission_id: info.mission_id,
+        mission_name: info.mission_name,
+        description: info.description,
+      }));
       state.mission = filteredMissions;
     });
     builder.addCase(getMissions.rejected, (state, [payload]) => {
