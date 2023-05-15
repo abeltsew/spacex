@@ -34,11 +34,13 @@ td {
 .not-member {
   background-color: darkgray;
   color: white;
+  border-radius: 4px;
 }
 
 .active-member {
   background-color: rgba(15, 127, 192, 0.761);
   color: white;
+  border-radius: 4px;
 }
 
 .table-header {
@@ -51,6 +53,7 @@ td {
   background: none;
   border: solid gray 1px;
   padding: 0.3rem;
+  border-radius: 4px;
 }
 
 .leave-mission-btn {
@@ -58,6 +61,7 @@ td {
   color: red;
   padding: 0.3rem;
   background: none;
+  border-radius: 4px;
 }
 
 .action {
