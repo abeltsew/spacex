@@ -7,7 +7,7 @@ const Rocket = ({ rocketInfo }) => (
     <div>
       <h2>{rocketInfo.rocket_name}</h2>
       <p>{rocketInfo.description}</p>
-      <button type='button'>Reserve Rocket</button>
+      <button type="button">Reserve Rocket</button>
     </div>
   </div>
 );
@@ -15,6 +15,5 @@ const Rocket = ({ rocketInfo }) => (
 export default Rocket;
 
 Rocket.propTypes = {
-  rocketInfo: propTypes.object,
+  rocketInfo: propTypes.oneOfType([propTypes.object]).isRequired,
 };
-

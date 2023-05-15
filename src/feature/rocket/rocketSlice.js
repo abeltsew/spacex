@@ -24,17 +24,17 @@ const rocketSlice = createSlice({
     });
     builder.addCase(getRockets.fulfilled, (state, { payload }) => {
       state.isRocketLoading = false;
-
-      const filteredRocketArrays = payload.map((item) => {
-        return {
-          id: item.id,
-          rocket_name: item.name,
-          description: item.description,
-          flickr_images: item.flickr_images[0],
-        };
-      });
-      console.log(filteredRocketArrays);
+      const filteredRocketArrays = payload.map((item) => ({
+        id: item.id,
+        rocket_name: item.name,
+        description: item.description,
+        flickr_images: item.flickr_images[0],
+      }));
       state.rockets = filteredRocketArrays;
+    });
+    builder.addCase(getRockets.rejected, (state) => {
+      state.isRocketLoading = false;
+      state.rocketError = true;
     });
   },
 });

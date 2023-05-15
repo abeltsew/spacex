@@ -5,7 +5,7 @@ import { getRockets } from '../feature/rocket/rocketSlice';
 
 const RocketList = () => {
   const { rockets, isRocketLoading, rocketError } = useSelector(
-    (state) => state.rocket
+    (state) => state.rocket,
   );
 
   const dispatch = useDispatch();
@@ -15,21 +15,28 @@ const RocketList = () => {
   }, [dispatch]);
 
   if (isRocketLoading) {
-    console.log('loading');
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   if (rocketError) {
-    console.log('There was an error');
+    return (
+      <div>
+        <p>There was an error</p>
+      </div>
+    );
   }
 
   return (
     <div>
       {rockets.map((rocket) => (
-        <Rocket rocketInfo={rocket} />
+        <Rocket key={rocket.id} rocketInfo={rocket} />
       ))}
     </div>
   );
 };
 
 export default RocketList;
-
