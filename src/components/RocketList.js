@@ -5,14 +5,14 @@ import { getRockets } from '../feature/rocket/rocketSlice';
 
 const RocketList = () => {
   const { rockets, isRocketLoading, rocketError } = useSelector(
-    (state) => state.rocket,
+    (state) => state.rocket
   );
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getRockets());
-  }, [dispatch]);
+  }, []);
 
   if (isRocketLoading) {
     return (

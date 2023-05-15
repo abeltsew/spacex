@@ -1,0 +1,23 @@
+.rocket {
+  display: flex;
+
+  padding: 1rem 2rem;
+}
+
+.rocket img {
+  width: 250px;
+}
+
+.rocket-info {
+  margin-left: 2rem;
+}
+
+.rocket button {
+  background-color: rgb(44, 44, 246);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
