@@ -1,0 +1,10 @@
+.shaded {
+  background-color: rgb(183, 183, 183);
+}
+.table-container {
+  padding: 2rem;
+}
+
+table * {
+  border: solid 1px gray;
+}
