@@ -9,8 +9,9 @@ import {
 import './mission.css';
 
 const Mission = () => {
-  const { missions, isMissionLoading, missionError, joinedMissions } =
-    useSelector((store) => store.mission);
+  const {
+    missions, isMissionLoading, missionError, joinedMissions,
+  } = useSelector((store) => store.mission);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,25 +33,30 @@ const Mission = () => {
       <table>
         <thead>
           <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
+            <th className="table-header">Mission</th>
+            <th className="table-header">Description</th>
+            <th className="table-header">Status</th>
             <th> </th>
           </tr>
         </thead>
         <tbody>
           {missions.map((m, i) => (
             <tr className={`${i % 2 === 0 ? 'shaded' : ''}`} key={m.mission_id}>
-              <td>{m.mission_name}</td>
-              <td>{m.description}</td>
+              <td className="mission-name">{m.mission_name}</td>
+              <td className="mission-description">{m.description}</td>
               {!joinedMissions?.includes(m.mission_id) ? (
-                <td className="not-member"> Not A Member</td>
+                <td className="status">
+                  <p className="not-member">Not A Member</p>
+                </td>
               ) : (
-                <td className="Active-member">Active Member</td>
+                <td className="status">
+                  <p className="active-member">Active Member</p>
+                </td>
               )}
               {!joinedMissions?.includes(m.mission_id) ? (
-                <td>
+                <td className="action">
                   <button
+                    className="join-mission-btn"
                     type="button"
                     onClick={() => dispatch(joinMission(m.mission_id))}
                   >
@@ -58,8 +64,9 @@ const Mission = () => {
                   </button>
                 </td>
               ) : (
-                <td>
+                <td className="action">
                   <button
+                    className="leave-mission-btn"
                     type="button"
                     onClick={() => dispatch(leaveMission(m.mission_id))}
                   >
