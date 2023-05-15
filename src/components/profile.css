@@ -1,0 +1,23 @@
+.profile-container {
+  display: flex;
+}
+
+.mission-info,
+.rocket-info {
+  flex: 1;
+}
+
+.mission-info {
+  padding: 0.2rem 1rem;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.mission-item {
+  border: solid 1px gray;
+  padding: 0.2rem 0 0.5rem 1rem;
+}
