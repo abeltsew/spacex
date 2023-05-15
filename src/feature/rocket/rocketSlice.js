@@ -24,8 +24,17 @@ const rocketSlice = createSlice({
     });
     builder.addCase(getRockets.fulfilled, (state, { payload }) => {
       state.isRocketLoading = false;
-      // console.log(payload);
-      state.rockets = payload;
+
+      const filteredRocketArrays = payload.map((item) => {
+        return {
+          id: item.id,
+          rocket_name: item.name,
+          description: item.description,
+          flickr_images: item.flickr_images[0],
+        };
+      });
+      console.log(filteredRocketArrays);
+      state.rockets = filteredRocketArrays;
     });
   },
 });
