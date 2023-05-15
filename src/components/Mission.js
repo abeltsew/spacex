@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  getMissions,
-  joinMission,
-  leaveMission,
-} from '../feature/mission/missionSlice';
+import { getMissions, toogleMission } from '../feature/mission/missionSlice';
 
 import './mission.css';
 
 const Mission = () => {
-  const {
-    missions, isMissionLoading, missionError, joinedMissions,
-  } = useSelector((store) => store.mission);
+  const { missions, isMissionLoading, missionError } = useSelector(
+    (store) => store.mission,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,11 +36,11 @@ const Mission = () => {
           </tr>
         </thead>
         <tbody>
-          {missions.map((m, i) => (
+          {missions?.map((m, i) => (
             <tr className={`${i % 2 === 0 ? 'shaded' : ''}`} key={m.mission_id}>
               <td className="mission-name">{m.mission_name}</td>
               <td className="mission-description">{m.description}</td>
-              {!joinedMissions?.includes(m.mission_id) ? (
+              {!m.reserved ? (
                 <td className="status">
                   <p className="not-member">Not A Member</p>
                 </td>
@@ -53,12 +49,12 @@ const Mission = () => {
                   <p className="active-member">Active Member</p>
                 </td>
               )}
-              {!joinedMissions?.includes(m.mission_id) ? (
+              {!m.reserved ? (
                 <td className="action">
                   <button
                     className="join-mission-btn"
                     type="button"
-                    onClick={() => dispatch(joinMission(m.mission_id))}
+                    onClick={() => dispatch(toogleMission(m.mission_id))}
                   >
                     Join Mission
                   </button>
@@ -68,7 +64,7 @@ const Mission = () => {
                   <button
                     className="leave-mission-btn"
                     type="button"
-                    onClick={() => dispatch(leaveMission(m.mission_id))}
+                    onClick={() => dispatch(toogleMission(m.mission_id))}
                   >
                     leave Mission
                   </button>
