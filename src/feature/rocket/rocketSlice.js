@@ -24,12 +24,16 @@ const rocketSlice = createSlice({
         }
         return rocket;
       });
-      // const filteredArray = state.rockets.filter(
-      //   (rocket) => rocket.id !== payload
-      // );
-
       state.rockets = newState;
-      console.log(state.rockets);
+    },
+    cancelReservation: (state, { payload }) => {
+      const newState = state.rockets.map((rocket) => {
+        if (rocket.id === payload) {
+          return { ...rocket, reserved: false };
+        }
+        return rocket;
+      });
+      state.rockets = newState;
     },
   },
 
@@ -55,4 +59,4 @@ const rocketSlice = createSlice({
 });
 
 export default rocketSlice.reducer;
-export const { makeReservation } = rocketSlice.actions;
+export const { makeReservation, cancelReservation } = rocketSlice.actions;

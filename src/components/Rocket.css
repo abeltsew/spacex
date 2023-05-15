@@ -12,10 +12,29 @@
   margin-left: 2rem;
 }
 
-.rocket button {
+.btn-reserve {
   background-color: rgb(44, 44, 246);
   color: #fff;
   border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.btn-reserved {
+  background-color: rgb(33, 169, 169);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  color: #3a3a3a;
+  border: 1px #3a3a3a solid;
   border-radius: 0.5rem;
   padding: 1rem;
   font-size: 1.2rem;
