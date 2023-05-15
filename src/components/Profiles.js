@@ -3,26 +3,19 @@ import { useSelector } from 'react-redux';
 import './profile.css';
 
 const Profiles = () => {
-  const { missions, joinedMissions } = useSelector((store) => store.mission);
+  const { missions } = useSelector((store) => store.mission);
 
-  const renderMission = () => {
-    if (joinedMissions.length === 0) {
-      return <h2>No Mission Subscribed!</h2>;
-    }
-    return (
-      <table className="mission-list">
-        {missions.map((mission) => {
-          if (joinedMissions.includes(mission.mission_id)) {
-            return (
-              <tr className="mission-item" key={mission.mission_id}>
-                {mission.mission_name}
-              </tr>
-            );
-          }
-        })}
-      </table>
-    );
-  };
+  const subscriptions = missions.filter((mission) => mission.reserved === true);
+
+  const renderMission = () => (
+    <table className="mission-list">
+      {subscriptions.map((sub) => (
+        <tr className="mission-item" key={sub.mission_id}>
+          {sub.mission_name}
+        </tr>
+      ))}
+    </table>
+  );
 
   return (
     <div className="profile-container">
