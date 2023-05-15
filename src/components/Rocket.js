@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Rocket = () => {
-  return <div>Rocket</div>;
-};
+const Rocket = () => <div>Rocket</div>;
 
 export default Rocket;
