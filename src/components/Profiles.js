@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import './profile.css';
 
 const Profiles = () => {
-  const { missions } = useSelector((store) => store.mission);
+  const { mission, rocket } = useSelector((store) => store);
+  const { missions } = mission;
+  const { rockets } = rocket;
 
   const subscriptions = missions.filter((mission) => mission.reserved === true);
 
@@ -25,6 +27,14 @@ const Profiles = () => {
       </div>
       <div className="rocket-info">
         <h2>My Rockets</h2>
+        {rockets
+          .filter((rocket) => rocket.reserved)
+          .map((rocket, i) => (
+            <div key={rocket.id} className="reserved-rockets">
+              <h4>{i + 1}</h4>
+              <p className="reserved-name">{rocket.rocket_name}</p>
+            </div>
+          ))}
       </div>
     </div>
   );
