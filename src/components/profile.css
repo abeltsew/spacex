@@ -1,5 +1,6 @@
 .profile-container {
   display: flex;
+  padding: 2rem;
 }
 
 .mission-info,
@@ -7,8 +8,9 @@
   flex: 1;
 }
 
-.mission-info {
-  padding: 0.2rem 1rem;
+.profile-container h2 {
+  text-align: center;
+  padding-bottom: 0.1rem;
 }
 
 .mission-list {
@@ -20,4 +22,18 @@
 .mission-item {
   border: solid 1px gray;
   padding: 0.2rem 0 0.5rem 1rem;
+}
+
+.reserved-rockets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px gray;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+}
+
+.reserved-name {
+  margin-left: 1rem;
 }

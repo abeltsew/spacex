@@ -9,7 +9,6 @@
 table,
 th,
 td {
-  border: solid 1px rgba(106, 106, 106, 0.153);
   border-collapse: collapse;
 }
 
