@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { makeReservation,cancelReservation } from '../feature/rocket/rocketSlice';
+import { makeReservation, cancelReservation } from '../feature/rocket/rocketSlice';
 
 import './Rocket.css';
 
