@@ -12,7 +12,7 @@ const RocketList = () => {
 
   useEffect(() => {
     dispatch(getRockets());
-  }, [dispatch]);
+  }, []);
 
   if (isRocketLoading) {
     return (
