@@ -23,15 +23,14 @@ const Profiles = () => {
     <div className="profile-container">
       <div className="mission-info">
         <h2>My Mission</h2>
-        {renderMission()}
+        {subscriptions.length > 0 && renderMission()}
       </div>
       <div className="rocket-info">
         <h2>My Rockets</h2>
         {rockets
           .filter((rocket) => rocket.reserved)
-          .map((rocket, i) => (
+          .map((rocket) => (
             <div key={rocket.id} className="reserved-rockets">
-              <h4>{i + 1}</h4>
               <p className="reserved-name">{rocket.rocket_name}</p>
             </div>
           ))}

@@ -9,6 +9,7 @@ const App = () => (
   <div>
     <Navbar />
     <Routes>
+      <Route path="/" element={<RocketList />} />
       <Route path="/rockets" element={<RocketList />} />
       <Route path="/missions" element={<Mission />} />
       <Route path="/profiles" element={<Profiles />} />
