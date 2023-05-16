@@ -3,6 +3,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
+  padding: 2rem 4%;
+}
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  width: 4rem;
+  height: 4rem;
 }
 
 ul {
@@ -22,4 +33,6 @@ a.active {
 
 .logo {
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
 }

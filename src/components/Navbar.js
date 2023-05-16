@@ -5,13 +5,16 @@ import './navbar.css';
 
 const Navbar = () => (
   <nav>
-    <NavLink to="/" className="logo">
-      Logo
-    </NavLink>
+    <div className="logos">
+      <img className="logo-img" src="/planet3.png" alt="logo" />
+      <h1 className="logo">Space Travelers &apos; Hub</h1>
+    </div>
 
     <ul>
       <li>
-        <NavLink to="/rockets">Rockets</NavLink>
+        <NavLink className="active" to="/rockets">
+          Rockets
+        </NavLink>
       </li>
       <li>
         <NavLink to="/missions">Missions</NavLink>
