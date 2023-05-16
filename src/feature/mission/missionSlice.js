@@ -5,7 +5,7 @@ export const getMissions = createAsyncThunk('get/missions', async () => {
   const mission = await axios.get('https://api.spacexdata.com/v3/missions');
   return mission.data;
 });
-const initialState = {
+export const initialState = {
   missions: [],
   joinedMissions: [],
   isMissionLoading: true,
