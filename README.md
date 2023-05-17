@@ -6,6 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -60,8 +61,13 @@ This site is built as part of an exercise at Microverse. The site is about a Spa
 - **Visit spaceX rockets**
 - **Explore the Missions**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo](https://spacex-mv.netlify.app/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
