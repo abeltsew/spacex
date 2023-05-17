@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4%;
+  border-bottom: solid gray 1px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  width: 4rem;
+  height: 4rem;
+}
+
+ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+ul a {
+  text-decoration: none;
+  color: rgb(44, 44, 246);
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}

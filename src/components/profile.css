@@ -1,0 +1,38 @@
+.profile-container {
+  display: flex;
+  padding: 2rem;
+}
+
+.mission-info,
+.rocket-info {
+  flex: 1;
+}
+
+.profile-container h2 {
+  text-align: center;
+  padding-bottom: 0.1rem;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.mission-item {
+  border: solid 1px gray;
+  padding: 0.2rem 0 0.5rem 1rem;
+}
+
+.reserved-rockets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px gray;
+  padding: 0 0.5rem;
+  height: 2rem;
+}
+
+.reserved-name {
+  margin-left: 1rem;
+}
