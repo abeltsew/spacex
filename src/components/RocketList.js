@@ -8,6 +8,8 @@ const RocketList = () => {
     (state) => state.rocket,
   );
 
+  console.log(rockets);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
