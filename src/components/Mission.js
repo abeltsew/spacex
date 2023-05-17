@@ -14,7 +14,7 @@ const Mission = () => {
     if (missions.length === 0) {
       dispatch(getMissions());
     }
-  }, []);
+  }, [dispatch, missions]);
 
   if (isMissionLoading) {
     return <div>Loading ...</div>;
